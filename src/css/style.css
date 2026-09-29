@@ -1,0 +1,689 @@
+/* =========================================================
+   INSTITUTO ESPERANÇA
+   EXPERIÊNCIA PRÁTICA III - FRONT-END
+   CSS - DESIGN E INTERATIVIDADE
+========================================================= */
+
+
+/* =========================================================
+   1. VARIÁVEIS
+========================================================= */
+
+:root {
+    --cor-principal: #287a4d;
+    --cor-principal-escura: #1f613d;
+    --cor-secundaria: #f5a623;
+    --cor-texto: #173b2a;
+    --cor-texto-claro: #ffffff;
+    --cor-fundo: #f7faf8;
+    --cor-fundo-card: #ffffff;
+    --cor-borda: #d7e3dc;
+    --cor-erro: #d9534f;
+    --cor-sucesso: #28a745;
+
+    --largura-maxima: 1200px;
+
+    --sombra: 0 4px 18px rgba(0, 0, 0, 0.08);
+    --sombra-hover: 0 8px 25px rgba(0, 0, 0, 0.13);
+
+    --raio: 12px;
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+
+/* =========================================================
+   3. LINKS E IMAGENS
+========================================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   4. CABEÇALHO
+========================================================= */
+
+.cabecalho {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 15px 6%;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid var(--cor-borda);
+
+    box-shadow: var(--sombra);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+.logo img {
+    width: 100px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   5. MENU
+========================================================= */
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.menu li {
+    list-style: none;
+}
+
+
+.menu a {
+    display: block;
+
+    padding: 8px 4px;
+
+    color: var(--cor-texto);
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border-bottom: 2px solid transparent;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.menu a:hover,
+.menu a:focus {
+    color: var(--cor-principal);
+
+    border-bottom-color:
+        var(--cor-principal);
+}
+
+
+/* =========================================================
+   6. ÁREA PRINCIPAL
+========================================================= */
+
+main {
+    min-height: calc(100vh - 180px);
+}
+
+
+.conteudo {
+    width: 100%;
+    max-width: var(--largura-maxima);
+
+    margin: 0 auto;
+
+    padding: 70px 30px;
+}
+
+
+.conteudo h1 {
+    margin-bottom: 20px;
+
+    color: var(--cor-texto);
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    line-height: 1.15;
+}
+
+
+.conteudo > p {
+    max-width: 800px;
+
+    margin-bottom: 30px;
+
+    font-size: 18px;
+
+    color: #40594b;
+}
+
+
+/* =========================================================
+   7. PÁGINA DE PROJETOS
+========================================================= */
+
+.lista-projetos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+
+.card-projeto {
+    overflow: hidden;
+
+    background-color:
+        var(--cor-fundo-card);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius:
+        var(--raio);
+
+    box-shadow:
+        var(--sombra);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        var(--sombra-hover);
+}
+
+
+.card-projeto img {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+}
+
+
+.card-projeto h2 {
+    padding:
+        22px 22px 8px;
+
+    color:
+        var(--cor-principal);
+
+    font-size: 22px;
+}
+
+
+.card-projeto p {
+    padding:
+        0 22px 25px;
+
+    color: #4c5f54;
+}
+
+
+/* =========================================================
+   8. FORMULÁRIO DE CONTATO
+========================================================= */
+
+.formulario {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 35px auto 0;
+
+    padding: 35px;
+
+    background-color:
+        var(--cor-fundo-card);
+
+    border:
+        1px solid var(--cor-borda);
+
+    border-radius:
+        var(--raio);
+
+    box-shadow:
+        var(--sombra);
+}
+
+
+.formulario .campo {
+    width: 100%;
+
+    margin-bottom: 22px;
+}
+
+
+/* Labels */
+
+.formulario .campo label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--cor-texto);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* Inputs */
+
+.formulario .campo input,
+.formulario .campo textarea {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    color: var(--cor-texto);
+
+    background-color: #ffffff;
+
+    border:
+        1px solid #cbd8d0;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Textarea */
+
+.formulario .campo textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* Foco */
+
+.formulario .campo input:focus,
+.formulario .campo textarea:focus {
+    border-color:
+        var(--cor-principal);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(40, 122, 77, 0.12);
+}
+
+
+/* =========================================================
+   9. VALIDAÇÃO DO FORMULÁRIO
+========================================================= */
+
+.mensagem-erro {
+    display: block;
+
+    min-height: 20px;
+
+    margin-top: 5px;
+
+    color:
+        var(--cor-erro);
+
+    font-size: 14px;
+}
+
+
+.campo.erro input,
+.campo.erro textarea {
+    border-color:
+        var(--cor-erro);
+}
+
+
+.campo.sucesso input,
+.campo.sucesso textarea {
+    border-color:
+        var(--cor-sucesso);
+}
+
+
+/* =========================================================
+   10. BOTÃO
+========================================================= */
+
+.formulario button {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color:
+        var(--cor-principal);
+
+    color:
+        var(--cor-texto-claro);
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.formulario button:hover {
+    background-color:
+        var(--cor-principal-escura);
+
+    transform: translateY(-1px);
+}
+
+
+.formulario button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   11. RODAPÉ
+========================================================= */
+
+.rodape {
+    width: 100%;
+
+    padding: 25px 20px;
+
+    margin-top: 30px;
+
+    text-align: center;
+
+    background-color:
+        var(--cor-texto);
+
+    color:
+        var(--cor-texto-claro);
+}
+
+
+.rodape p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   12. RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .cabecalho {
+        padding:
+            15px 4%;
+    }
+
+
+    .lista-projetos {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .cabecalho {
+        flex-direction: column;
+
+        gap: 12px;
+
+        position: relative;
+    }
+
+
+    .logo img {
+        width: 85px;
+    }
+
+
+    .menu {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+    }
+
+
+    .menu a {
+        font-size: 14px;
+    }
+
+
+    .conteudo {
+        padding:
+            45px 20px;
+    }
+
+
+    .conteudo h1 {
+        font-size: 2rem;
+    }
+
+
+    .conteudo > p {
+        font-size: 16px;
+    }
+
+
+    .lista-projetos {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .card-projeto img {
+        height: 220px;
+    }
+
+
+    .formulario {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   13. ACESSIBILIDADE
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline:
+        3px solid var(--cor-secundaria);
+
+    outline-offset: 3px;
+}
+/* =========================================================
+   PÁGINA INICIAL
+========================================================= */
+
+.inicio {
+    width: 100%;
+    min-height: calc(100vh - 180px);
+
+    padding: 60px 30px;
+
+    background-color: var(--cor-fundo);
+}
+
+
+.inicio-conteudo {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+.inicio-texto h1 {
+    margin-bottom: 25px;
+
+    color: var(--cor-texto);
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    line-height: 1.1;
+}
+
+
+.inicio-texto p {
+    max-width: 600px;
+
+    color: #40594b;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+
+.inicio-imagem {
+    width: 100%;
+}
+
+
+.inicio-imagem img {
+    width: 100%;
+
+    max-height: 450px;
+
+    object-fit: cover;
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+}
+
+
+/* Responsividade da página inicial */
+
+@media (max-width: 768px) {
+
+    .inicio {
+        padding: 40px 20px;
+    }
+
+
+    .inicio-conteudo {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .inicio-texto h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .inicio-texto p {
+        font-size: 17px;
+    }
+
+
+    .inicio-imagem img {
+        max-height: 350px;
+    }
+}
