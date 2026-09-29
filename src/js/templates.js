@@ -19,7 +19,7 @@ export function paginaInicio() {
                 <div class="inicio-imagem">
 
                     <img
-                        src="/imagens/banner.webp"
+                        src="${import.meta.env.BASE_URL}imagens/banner.webp"
                         alt="Instituto Esperança - ações sociais"
                     >
 
@@ -43,7 +43,7 @@ export function paginaProjetos() {
                 <article class="card-projeto">
 
                     <img
-                        src="/imagens/projetos/educacao.webp"
+                        src="${import.meta.env.BASE_URL}imagens/projetos/educacao.webp"
                         alt="Projeto de educação"
                     >
 
@@ -60,7 +60,7 @@ export function paginaProjetos() {
                 <article class="card-projeto">
 
                     <img
-                        src="/imagens/projetos/inclusao.webp"
+                        src="${import.meta.env.BASE_URL}imagens/projetos/inclusao.webp"
                         alt="Projeto de inclusão social"
                     >
 
@@ -77,7 +77,7 @@ export function paginaProjetos() {
                 <article class="card-projeto">
 
                     <img
-                        src="/imagens/projetos/sustentabilidade.webp"
+                        src="${import.meta.env.BASE_URL}imagens/projetos/sustentabilidade.webp"
                         alt="Projeto de sustentabilidade"
                     >
 
